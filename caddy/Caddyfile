@@ -1,0 +1,11 @@
+
+# Redirect apex to www
+clinicaltrialmdchat.com {
+    redir https://www.clinicaltrialmdchat.com{uri} permanent
+}
+
+# Serve app on www
+www.clinicaltrialmdchat.com {
+    encode gzip
+    reverse_proxy 127.0.0.1:8000
+}

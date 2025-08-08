@@ -1,0 +1,23 @@
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+.venv/
+env/
+venv/
+
+# Data
+*.csv
+data/
+*.db
+
+# Secrets
+.env
+*.pem
+
+# OS / editor
+.DS_Store
+*.swp

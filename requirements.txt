@@ -1,0 +1,7 @@
+
+Flask==3.0.3
+pandas
+openai>=1.0.0,<2.0.0
+gunicorn
+# Optional if you later separate frontend (GitHub Pages) and need cross-origin:
+# flask-cors

@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clinical Trials Chatbot</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin: 40px; }
+    input, button { padding: 10px; font-size: 16px; }
+    input { width: 70%; max-width: 600px; }
+    #response, #follow_up { margin-top: 20px; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .trial { padding: 8px 0; border-bottom: 1px solid #eee; }
+  </style>
+</head>
+<body>
+  <h1>Clinical Trials Chatbot</h1>
+  <input type="text" id="user_input" placeholder="Ask anything about clinical trials..." />
+  <button id="go">Search</button>
+  <div id="response"></div>
+  <div id="follow_up"></div>
+
+  <script>
+    async function sendQuery() {
+      const q = document.getElementById("user_input").value.trim();
+      const responseDiv = document.getElementById("response");
+      const followUpDiv = document.getElementById("follow_up");
+      responseDiv.innerHTML = "";
+      followUpDiv.innerHTML = "";
+      if (!q) { responseDiv.innerHTML = "<p style='color:red'>Please enter a query.</p>"; return; }
+
+      responseDiv.innerHTML = "<p>Searching for trials...</p>";
+      try {
+        const res = await fetch("/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ user_input: q })
+        });
+        const data = await res.json();
+        if (data.results) {
+          responseDiv.innerHTML = "<h3>Search Results:</h3>";
+          data.results.forEach(t => {
+            responseDiv.innerHTML += `
+              <div class="trial">
+                <strong>${t.title}</strong><br/>
+                NCT: ${t.nct_id || "—"} | Status: ${t.status || "—"} | Phase: ${t.phase || "—"}<br/>
+                <details><summary>Eligibility</summary><pre>${(t.eligibility || "").replace(/</g,"&lt;")}</pre></details>
+              </div>`;
+          });
+        } else if (data.message) {
+          responseDiv.innerHTML = `<p>${data.message}</p>`;
+        } else if (data.error) {
+          responseDiv.innerHTML = `<p style='color:red'>${data.error}</p>`;
+        }
+
+        if (data.follow_up_questions && data.follow_up_questions.length) {
+          followUpDiv.innerHTML = "<h3>Suggested Questions:</h3>";
+          data.follow_up_questions.forEach(q => {
+            followUpDiv.innerHTML += `<p>➡️ ${q}</p>`;
+          });
+        }
+      } catch (e) {
+        responseDiv.innerHTML = `<p style='color:red'>Network error: ${e}</p>`;
+      }
+    }
+    document.getElementById("go").addEventListener("click", sendQuery);
+    document.getElementById("user_input").addEventListener("keydown", e => {
+      if (e.key === "Enter") sendQuery();
+    });
+  </script>
+</body>
+</html>
