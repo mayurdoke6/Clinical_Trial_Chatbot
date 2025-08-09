@@ -14,6 +14,18 @@ A conversational AI tool designed to help users search, filter, and understand i
 - **Web UI** that runs on GitHub Pages (no install for end users)
 
 ---
+## 👩‍💻 Usage (hosted)
+End users can directly access the chatbot here: http://52.15.154.10/
+---
+## 📄 License
+MIT License — see LICENSE.
+---
+## 📬 Contact
+Author: Mayur Doke  
+Email: mayurdoke@gmail.com  
+Repo: https://github.com/mayurdoke6/Clinical_Trial_Chatbot
+
+---
 
 ## 📦 Project Structure
 ```text
@@ -34,18 +46,6 @@ Clinical_Trial_Chatbot/
 ├── requirements.txt           # Project-wide Python dependencies (if used)
 ├── LICENSE                    # License (MIT recommended)
 └── README.md                  # This file
-
----
-## 👩‍💻 Usage (hosted)
-End users can directly access the chatbot here: http://52.15.154.10/
----
-## 📄 License
-MIT License — see LICENSE.
----
-## 📬 Contact
-Author: Mayur Doke  
-Email: mayurdoke@gmail.com  
-Repo: https://github.com/mayurdoke6/Clinical_Trial_Chatbot
 
 
   
