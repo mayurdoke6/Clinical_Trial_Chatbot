@@ -19,10 +19,11 @@ This project has two main components:
 
 ---
 
+
+# Clinical_Trial_Chatbot
+
+A conversational AI tool to search, filter, and understand information from clinical trial databases such as [ClinicalTrials.gov](https://clinicaltrials.gov/).
+
+---
+
 ## 📂 Project Structure
-Clinical_Trial_Chatbot/
-├── backend/ # Flask/FastAPI backend code
-├── docs/ # Frontend files for GitHub Pages
-├── data/ # (Optional) Preprocessed datasets
-├── requirements.txt # Python dependencies
-└── README.md # Project documentation
