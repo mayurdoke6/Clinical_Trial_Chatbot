@@ -20,3 +20,9 @@ This project has two main components:
 ---
 
 ## 📂 Project Structure
+Clinical_Trial_Chatbot/
+├── backend/ # Flask/FastAPI backend code
+├── docs/ # Frontend files for GitHub Pages
+├── data/ # (Optional) Preprocessed datasets
+├── requirements.txt # Python dependencies
+└── README.md # Project documentation
