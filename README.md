@@ -36,11 +36,11 @@ Clinical_Trial_Chatbot/
 └── README.md                  # This file
 
 
-
+  
 **Live App:** http://52.15.154.10/
 
 ---
-
+  
 ## 🧰 Local Setup (optional, for developers)
 
 ### 1) Clone
@@ -60,16 +60,16 @@ pip install -r requirements.txt
 pip install -r backend/requirements.txt
 
 ---
-
+  
 ## 👩‍💻 Usage (hosted)
 End users can directly access the chatbot here:
 
 http://52.15.154.10/
 
----
+---  
 ## 📄 License
 MIT License — see LICENSE.
----
+---  
 ## 📬 Contact
 Author: Mayur Doke
 Email: mayurdoke@gmail.com
