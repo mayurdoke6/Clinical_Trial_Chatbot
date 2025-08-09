@@ -24,6 +24,3 @@ This project has two main components:
 
 A conversational AI tool to search, filter, and understand information from clinical trial databases such as [ClinicalTrials.gov](https://clinicaltrials.gov/).
 
----
-
-## 📂 Project Structure
