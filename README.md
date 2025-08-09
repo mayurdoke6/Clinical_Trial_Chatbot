@@ -16,13 +16,13 @@ A conversational AI tool designed to help users search, filter, and understand i
 ---
 ## 👩‍💻 Usage (hosted)
 End users can directly access the chatbot here: http://52.15.154.10/
----
+
 ## 📄 License
 MIT License — see LICENSE.
----
+
 ## 📬 Contact
-Author: Mayur Doke  
-Email: mayurdoke@gmail.com  
+Author: Mayur Doke
+Email: mayurdoke@gmail.com
 Repo: https://github.com/mayurdoke6/Clinical_Trial_Chatbot
 
 ---
